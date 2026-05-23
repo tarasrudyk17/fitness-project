@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Оплата за абонемент "{{ subscription.name }}"</h2>
+<p>Сума до сплати: <strong>{{ subscription.price }} грн</strong></p>
+
+<form method="post">
+    {% csrf_token %}
+    <label for="method">Оберіть метод оплати:</label><br>
+    <select name="method" id="method" required>
+        <option value="online">Google Pay / Apple Pay</option>
+        <option value="card">Картка</option>
+        <option value="cash">Готівка</option>
+    </select><br><br>
+    <button type="submit">Оплатити</button>
+</form>
+{% endblock %}
+

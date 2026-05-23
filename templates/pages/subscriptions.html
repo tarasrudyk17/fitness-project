@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="subscriptions-container">
+    {% for sub in subscription_types %}
+        <div class="subscription-card">
+            <h3>{{ sub.name }}</h3>
+            <p><strong>Категорія:</strong> {{ sub.get_category_display }}</p>
+            <p><strong>Опис:</strong> {{ sub.description }}</p>
+            <p><strong>Ціна:</strong> {{ sub.price }} грн</p>
+            <p><strong>Тривалість:</strong> {{ sub.duration_days }} днів</p>
+            <p><strong>Години доступу:</strong> {{ sub.access_time }}</p>
+            <p><strong>Заморозка:</strong> {{ sub.freeze_days }} днів</p>
+            <form method="get" action="{% url 'purchase_subscription' sub.id %}">
+                <button type="submit">ПРИДБАТИ</button>
+            </form>
+
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

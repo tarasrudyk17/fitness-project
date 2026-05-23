@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Фітнес-центр | Головна</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            padding: 15px 20px;
+        }
+        footer {
+            background-color: #333;
+            color:#f0f0f0;
+            padding: 15px 20px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 40px 20px;
+            background: white;
+            max-width: 900px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .row{
+            font-family: serif;
+            font-size: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .col-3 a{
+            color:#f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Головна</a>
+            <a href="/about/">Про нас</a>
+            <a href="/rules/">Правила</a>
+            <a href="/subscriptions/">Абонементи</a>
+            <a href="/profile/">Профіль</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Ласкаво просимо до нашого фітнес-центру!</h1>
+        <p>Оберіть сторінку з навігації зверху для перегляду інформації чи абонементів.</p>
+    </main>
+    <footer class="bg-secondary text-light text-center py-2">
+        <div >
+            <div class="row">
+                <div class="col-3">
+                    <h2>Контакти</h2>
+                    <p>Графік роботи :</p>
+                    <p>Пн - Сб: 07:00-22:00</p>
+                    <p>Нд: 09:00 -19:00</p>
+                    <p>+380322546099</p>
+                </div>
+                <div class="col-3">
+                    <h2>Меню</h2>
+                    <a href="/">Головна</a></br>
+                    <a href="/about/">Про нас</a></br>
+                    <a href="/rules/">Правила</a></br>
+                    <a href="/profile/">Профіль</a></br>
+                    <a href="/subscriptions/">Абонементи</a>
+                </div>
+            </div>
+        </div>
+        <p align="center">&copy; 2025</p>
+    </footer>
+</body>
+</html>

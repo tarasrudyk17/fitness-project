@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Фітнес-центр{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f0f0; margin: 0; }
+        header, footer { background-color: #333; color: white; padding: 15px 20px; }
+        nav a { color: white; margin: 0 10px; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        main { background: white; padding: 20px; margin: 20px auto; max-width: 900px; border-radius: 8px; }
+        .subscriptions-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .subscription-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 16px;
+            width: 300px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Головна</a>
+            <a href="/about/">Про нас</a>
+            <a href="/rules/">Правила</a>
+            <a href="/subscriptions/">Абонементи</a>
+            <a href="/profile/">Профіль</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p align="center">&copy; 2025 Фітнес-центр</p>
+    </footer>
+</body>
+</html>

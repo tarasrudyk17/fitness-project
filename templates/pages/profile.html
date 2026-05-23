@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+    {% if user.is_authenticated %}
+        <h2>Профіль користувача</h2>
+        <p><strong>Ім’я користувача:</strong> {{ user.username }}</p>
+        <p><strong>Електронна адреса:</strong> {{ user.email }}</p>
+        <p><strong>Роль:</strong> {{ user.userprofile.role }}</p>
+
+        {% if active_subscription %}
+            <h3>Активний абонемент:</h3>
+            <p><strong>Назва:</strong> {{ active_subscription.subscription_type.name }}</p>
+            <p><strong>Період:</strong> {{ active_subscription.start_date }} — {{ active_subscription.end_date }}</p>
+            <p><strong>Доступ:</strong> {{ active_subscription.subscription_type.access_time }}</p>
+        {% else %}
+            <p>У вас немає активного абонементу.</p>
+        {% endif %}
+
+        <form method="post" action="{% url 'logout' %}">{% csrf_token %}
+            <button type="submit">Вийти</button>
+        </form>
+    {% else %}
+        <p>Ви не авторизовані. <a href="{% url 'login' %}">Увійти</a> або <a href="{% url 'register' %}">Зареєструватись</a>.</p>
+    {% endif %}
+</main>
+{% endblock %}
+
